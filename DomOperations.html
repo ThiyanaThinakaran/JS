@@ -1,0 +1,44 @@
+<html>
+  <head>
+  <title> DOM Example
+  </title>
+</head>
+<body>
+ <p id="p1">Paragraph1</p>
+  <b id="b1">Bold Text</b>
+  <form name="empform">
+  <input type="text" name="firstName" /><br>
+  <input type="checkbox" id="h1"/>Music <br>
+  </form>
+  <script>
+    var uline=document.createElement('u');
+    uline.innerText='Underlined text.DOM Operations';
+    document.body.appendChild(uline);
+//forms[0]= 1st form in page; multiple forms can be created
+//all of them will have idex number
+    var input=document.createElement("br");
+    document.forms[0].appendChild(input);
+
+    var textfield = document.createElement('input');
+    textfield.type='text';
+    textfield.placeholder='Enter your last name';
+    textfield.width=100;
+    textfield.height=40;
+    document.forms[0].appendChild(textfield);
+
+   var radiofield = document.createElement('input');
+    radiofield.type='radio';
+    radiofield.placeholder='Enter your last name';
+    radiofield.width=100;
+    radiofield.height=40;
+    document.forms[0].appendChild(radiofield);
+
+    var cfirm=confirm("want to remove bold tag yes/no?");
+    if(cfirm)
+    {
+        var btag =document.getElementById("b1");
+        document.removeChild(btag);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<center><b>User information</b>
+    <script>
+        function checkFirstName(){
+           var fname= document.forms[0].firstName.value;
+           if(fname==""){
+            var nerror=document.getElementById("nameerror");
+        nerror.style.fontWeight="bold";
+        nerror.style.fontStyle="italic";
+        nerror.innerHTML="First name is manditory";
+           //window.alert("First name is manditory");
+        //document.forms[0].firstName.focus();
+        
+           }
+        }
+
+        function checkAge(){
+           var empAge= document.forms[0].empAge.value;
+           if(empAge==""){
+           //window.alert("Age is manditory");
+           var agerror=document.getElementById("ageerror");
+        agerror.style.fontWeight="bold";
+        agerror.style.fontStyle="italic";
+        agerror.innerHTML="Age is manditory";
+           }
+        }
+
+        function setProjectJoinDateMin(input) {
+        var projectJoinDateInput = document.querySelector('input[name="Projectjoindate"]');
+        projectJoinDateInput.min = input.value;
+          }
+
+        function clearError(){
+            document.getElementById("nameerror").innerHTML="";
+        }
+
+        function confirmReset(){
+            var status=confirm("Want to reset and lose the data ?");
+            console.log(status);
+            return status;
+        }
+
+        function enableSave(){
+            var v=document.getElementsByName("saveStatus");
+            var checkstate=v[0].checked;
+            document.getElementById("save").disabled=!checkstate;
+        }
+    </script>
+<form action="#" novalidate onreset="return confirmReset()">
+    <label>Employee ID</label><input type="text" name="employeeID" value="100" readonly/><br>
+
+    <label for="fname">First name</label><input type="text"
+    name="firstName" placeholder="Enter your name"
+     required minlength="3" maxlength="30"  onblur="checkFirstName()" onfocus="clearError()"/>
+     <label id="nameerror" style="color: red"></label><br>
+
+    <label>Age</label><input type="number" min="18" max="60" name="empAge" size="5"  onblur="checkAge()"/>
+    <label id="ageerror" style="color: red"></label><br>
+
+    <label>Preferred Volume</label>    
+    <input type="range" min="1" max="100" style="width:200;"
+     onchange="updateVolume()" name="Volume"/>
+
+     <input type="text" name="volLevel" style="width:60px;height:15px" readonly/><br><br>
+
+     <label>Date of Joining</label>
+     <input type="date" name="joindate" min="2020-03-31" max="2023-09-26"
+      onchange="setProjectJoinDateMin(this)">
+     <br>
+     
+     <label>Project join date</label>
+     <input type="date" name="Projectjoindate" min="2020-03-31" max="2023-09-26">
+     <br>
+
+     <label>Upload your Resume</label>
+     <input type="file" name="Resume" accept="audio/mp3,video/mp4,video/mpeg,application/pdf"/><br>
+
+     Your eMail<input type="email" name="emailID" minlength="6"/><br>
+     <br><br>
+
+     <input type="checkbox" name="saveStatus" onclick="enableSave()"/>
+     Agree to Terms & Conditions <br> <br>
+
+    <input type="submit" value="Save" id="save" disabled />&nbsp;&nbsp;<input type="reset" value="reset"/>
+</form>
+
+<script>
+    function updateVolume(){
+        document.forms[0].volLevel.value=document.forms[0].Volume.value + "%";
+    }
+</script>
+</center>

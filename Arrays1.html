@@ -1,0 +1,50 @@
+<html>
+    <script>
+        var arr=["Gavstech", 100, 200, 300, true, "chennai", 2];
+        for(i in arr)
+           document.writeln(arr[i] + "@" + i + "<br>");
+        document.writeln("<br><br>")
+        for(i of arr)
+            document.writeln(i + "<br>");
+            document.writeln("<br><br>")
+        document.writeln("Array lenth is :" + arr.length);
+        document.writeln("<br><br>")
+        arr.sort();
+        document.writeln("Sorted array is :" + arr);
+        document.writeln("<br><br>")
+        arr.reverse();
+        document.writeln("Reversed array is :" + arr);
+        document.writeln("<br><br>")
+        var v=arr.indexOf("Gavstech");
+        if(v == -1)
+            document.writeln("<b> element not found</b>");
+        else
+        document.writeln("<b> elememt found @" + v + "position</b>");
+            document.writeln("<br><br>")
+   
+    document.writeln(arr);
+    document.writeln(arr.join("..."))
+
+    arr.push(700);
+    arr.push("thiya");
+    document.writeln("<br><br>"+arr+"<br><br>")
+
+    arr.pop();
+    document.writeln("Arr after pop :"+arr+"<br><br>");
+
+    delete arr[3];
+    document.writeln("Arr after :"+arr+"<br><br>");
+
+    var status=200 in arr;
+    if(status)
+    document.writeln("<br>200 present");
+    else 
+    document.writeln("<br> not present");
+
+    </script>
+    <body>
+    </body>
+
+ 
+
+</html>

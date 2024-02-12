@@ -1,0 +1,25 @@
+<html>
+    <script type="text/javascript" lang="javascript">
+cities=["Chennai","Bangalore","Hyderabad","Mumbai"];
+document.writeln(cities.length+"<br>");
+document.writeln(cities+"<br>");
+
+for(i in cities)
+document.writeln(cities[i]+"<br>");
+document.writeln("<br> I of<br>");
+
+for(i of cities)
+document.writeln(i);
+
+cities[7]="Pondi";
+cities[11]="Madurai";
+document.writeln("<br>Cities :"+cities);
+cities.sort();
+document.writeln(" <br>sorted Cities :"+cities);
+cities.reverse();
+document.writeln("<br> revered Cities :"+cities);
+    </script>
+    <body>
+
+    </body>
+</html>

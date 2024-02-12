@@ -1,0 +1,30 @@
+<html>
+    <script>
+    //associative array
+    var dict=[];
+    dict["India"]="New Delhi";// countries are key & capitals are keys
+    dict["USA"]="Washington";
+    dict["S.Korea"]="Seoul";
+
+    document.writeln(dict["India"]+"<br>");
+    document.writeln(dict["S.Korea"]+"<br>");
+
+        var obj=new Object();
+        obj.empID=100;
+        obj.firstName="Rya";
+        obj.LastName="Thiya";
+        document.writeln(obj.empID+"&nbsp;&nbsp;"+obj.firstName);
+        document.writeln("<br>"+ obj["firstName"]+ "&nbsp;&nbsp;" +obj["LastName"]+"<br>");
+        
+        obj.getFirstName = function ()
+        {
+            return this.firstName;
+        };
+        obj.getLastName = function ()
+        {
+            return this.LastName;
+        };
+        document.writeln("Firstname: " + obj.getFirstName());
+        document.writeln("Lastname: " + obj.getLastName());
+    </script>
+</html>

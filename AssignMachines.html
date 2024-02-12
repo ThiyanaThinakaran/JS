@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Machine IP Addresses</title>
+</head>
+<body>
+    <h1>Machine IP Addresses</h1>
+
+    <script>
+        const machineIPs = {
+            "Machine1": "192.168.1.100",
+            "Machine2": "192.168.1.101",
+            "Machine3": "192.168.1.102",
+            "Machine4": "192.168.1.103",
+        };
+        function printMachineIPs() {
+            const machineList = document.createElement("ul");
+
+            for (const machineName in machineIPs) {
+                if (machineIPs.hasOwnProperty(machineName)) {
+                    const ipAddress = machineIPs[machineName];
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${machineName}: ${ipAddress}`;
+                    machineList.appendChild(listItem);
+                }
+           }
+
+            document.body.appendChild(machineList);
+        }
+        printMachineIPs();
+    </script>
+</body>
+</html>

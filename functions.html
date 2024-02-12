@@ -1,0 +1,31 @@
+<html>
+    <script>
+        function test(num1, num2){
+            document.writeln(Math.sqrt(num1)+"<br><br>");
+            document.writeln(Math.sqrt(num2)+"<br><br>");
+        }
+        test(100,200);//function call
+        test(1000,2000);
+
+        var validate= function(age)
+        {
+            if(age<=18  || age>=60)
+            document.writeln("<b>not elligible for job </b>")
+        else
+        document.writeln ("<b>elligible for job </b>")
+        }
+        validate(19)
+        var sum=new Function
+        ("num1,num2"," return num1 + num2;");
+
+        /* actual fn
+       Function calc(num1,num2){
+       return num1 * num2;
+       return num1 +num2;
+       }
+       */
+
+        var res=sum(10,20);
+        document.writeln("<br>res="+res);
+    </script>
+</html>
